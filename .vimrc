@@ -32,9 +32,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set noswapfile
+let mapleader='\'
 
 " Map <ctrl-slash> to trigger global search
-nnoremap <C-_> :Ggr -i
+nnoremap <C-_> :Ggr -i<space>
 
 " Mappings for moving lines up and down
 nnoremap <C-j> :m .+1<CR>==
@@ -53,7 +54,7 @@ let g:NERDSpaceDelims = 1
 
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " vim-jsx settings
