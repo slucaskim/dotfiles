@@ -8,6 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/badwolf'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'neomake/neomake'
+Plugin 'jaawerth/neomake-local-eslint-first'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript.git'
@@ -63,6 +65,11 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ %f
 set statusline+=%#warningmsg#
 set statusline+=%*
+
+" Neomake settings
+call neomake#configure#automake('w')
+let g:neomake_javascript_enabled_makers = ['eslint']
+tnoremap <Esc> <C-\><C-n>
 
 " Nerdtree settings
 nnoremap <silent> <Leader>r :NERDTreeFind<CR>
