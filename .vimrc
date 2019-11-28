@@ -1,3 +1,8 @@
+" Dependencies
+" vim-plug https://github.com/junegunn/vim-plug
+" fzf https://github.com/junegunn/fzf
+" ag https://github.com/ggreer/the_silver_searcher
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -53,9 +58,6 @@ nmap <C-o> :History<CR>
 
 " nerdcommenter settings
 let g:NERDSpaceDelims = 1
-
-" vim-jsx settings
-" let g:jsx_ext_required = 0
 
 " status line settings
 set statusline+=\ %{fugitive#statusline()}
