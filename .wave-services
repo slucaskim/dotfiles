@@ -1,19 +1,0 @@
-startup_message off
-hardstatus alwayslastline
-hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR} (%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}] %{=b C}[ %m/%d %c ]%{W}'
-defscrollback 10000
-screen -t juno-local 0
-select 0
-stuff "cd ~/wave/src/juno-local; make start;"
-screen -t api 1
-select 1
-stuff "cd ~/wave/src/api; make start;"
-screen -t identity 2
-select 2
-stuff "cd ~/wave/src/identity; make start;"
-screen -t central-banking 3
-select 3
-stuff "cd ~/wave/src/central-banking; make start;"
-screen -t next-wave 4
-select 4
-stuff "cd ~/wave/src/next-wave; yarn run dev;"
