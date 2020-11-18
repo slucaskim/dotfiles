@@ -13,17 +13,18 @@ Plug 'tpope/vim-rhubarb'
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-haml'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'godlygeek/tabular'
 Plug 'quentindecock/vim-cucumber-align-pipes'
 Plug 'kchmck/vim-coffee-script'
 Plug 'ngmy/vim-rubocop'
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'jparise/vim-graphql'
+Plug 'ianks/vim-tsx'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-syntastic/syntastic'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf.vim'
@@ -38,6 +39,8 @@ set cursorcolumn
 set showmatch
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -48,16 +51,14 @@ set mouse=a
 set hidden
 
 " fzf settings
-nmap <C-p> :GFiles<CR>
+" git ls-files ignore rbi extensions
+nmap <C-p> :GFiles -- ':!:*.rbi'<CR>
 nmap <C-_> :Ag<CR>
-nmap <silent> <C-f> :Ag <C-R><C-W><CR>
-
-let g:fzf_layout = { 'down': '~25%' }
-
+nmap <silent> <C-f> :Ag <C-R>--ignore ".*rbi" <C-W><CR>
 nmap <C-o> :History<CR>
 
-" nerdcommenter settings
-let g:NERDSpaceDelims = 1
+" Copy file path to clipboard
+command P execute('let @+ = expand("%")')
 
 " status line settings
 set statusline+=\ %{fugitive#statusline()}
@@ -77,7 +78,6 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 let g:strip_whitespace_confirm=0
 
 " rubocop
-let g:vimrubocop_config = '~/wave/src/payroll/.rubocop.yml'
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 nmap <Leader>ra :RuboCop -a<CR>
@@ -90,4 +90,6 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python3']
+
+" reload initvm key binding
+nnoremap <leader>sv :source $MYVIMRC<CR>
