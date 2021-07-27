@@ -106,3 +106,7 @@ alias be="bundle exec"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [ -e /Users/lucaskim/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/lucaskim/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export PATH="$HOME/.gem/ruby/2.6.3/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
