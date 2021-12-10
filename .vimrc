@@ -86,6 +86,9 @@ let g:NERDSpaceDelims = 1
 autocmd BufEnter * EnableStripWhitespaceOnSave
 let g:strip_whitespace_confirm=0
 
+" don't auto-fold
+let g:vim_markdown_folding_disabled = 1
+
 " rubocop
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
