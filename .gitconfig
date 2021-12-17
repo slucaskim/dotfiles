@@ -6,7 +6,7 @@
   d = diff
   po = !git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"
   amend = commit --amend --no-edit
-  done = !git checkout master && git pull && git branch -d @{-1}
+  done = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git pull && git branch -d @{-1}
 [core]
 	commitGraph = true
 [diff]
@@ -27,7 +27,7 @@
 	branch = false
 	grep = false
 [credential]
-	helper = 
+	helper =
 	helper = store --file /opt/dev/var/private/git_credential_store
 [pull]
 	rebase = false
