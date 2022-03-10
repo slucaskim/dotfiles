@@ -27,10 +27,10 @@ for dotfile in src/**/*; do
 	fi
 done
 
-for zsh_custom_file in zsh_custom/*; do
-  echo "--- $zsh_custom_file -> $ZSH_CUSTOM"
-  ln -sf ${zsh_custom_file:P} "$ZSH_CUSTOM"
-done
+# for zsh_custom_file in zsh_custom/*; do
+  # echo "--- $zsh_custom_file -> $ZSH_CUSTOM"
+  # ln -sf ${zsh_custom_file:P} "$ZSH_CUSTOM"
+# done
 
 # Install dependencies
 #
