@@ -2,6 +2,9 @@
 
 cd "${0%/*}"
 
+# Oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Link dotfiles
 #
 echo
@@ -22,6 +25,11 @@ for dotfile in src/**/*; do
 		echo "--- $dotfile -> $destination"
 		ln -sf ${dotfile:P} "$destination"
 	fi
+done
+
+for zsh_custom_file in zsh_custom/*; do
+  echo "--- $zsh_custom_file -> $ZSH_CUSTOM"
+  ln -sf ${zsh_custom_file:P} "$ZSH_CUSTOM"
 done
 
 # Install dependencies
@@ -55,15 +63,14 @@ nvim --headless +PlugInstall +qall
 echo --- neovim configured
 echo
 
-# Oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Silver Searcher
 install silversearcher-ag
 
 # fzf
 install fzf
-$(brew --prefix)/opt/fzf/install
+if command -v brew &> /dev/null; then
+  $(brew --prefix)/opt/fzf/install
+fi
 
 if [[ $SPIN ]]; then
   git config --global user.email "lucas.kim@shopify.com"
