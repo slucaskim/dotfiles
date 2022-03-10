@@ -30,6 +30,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-syntastic/syntastic'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'Shopify/vim-sorbet'
 call plug#end()
 
