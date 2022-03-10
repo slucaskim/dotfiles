@@ -61,6 +61,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Silver Searcher
 install silversearcher-ag
 
+# fzf
+install fzf
+$(brew --prefix)/opt/fzf/install
 
 if [[ $SPIN ]]; then
   git config --global user.email "lucas.kim@shopify.com"
