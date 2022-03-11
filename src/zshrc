@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 if [ "$SPIN" ]; then
-  ZSH_THEME="agnoster"
+  ZSH_THEME="cloud"
 else
   ZSH_THEME="eastwood"
 fi
