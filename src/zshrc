@@ -2,7 +2,11 @@
 export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+if [ "$SPIN" ]; then
+  ZSH_THEME="agnoster"
+else
+  ZSH_THEME="eastwood"
+fi
 # HYPHEN_INSENSITIVE="true"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
