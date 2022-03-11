@@ -27,17 +27,6 @@ for dotfile in src/**/*; do
 	fi
 done
 
-for zsh_custom_file in zsh_custom/**/*; do
-	if [ -d "$zsh_custom_file" ]; then
-		mkdir $destination
-	fi
-
-	if [ -f "$zsh_custom_file" ]; then
-    echo "--- $zsh_custom_file -> $ZSH_CUSTOM"
-    ln -sf ${zsh_custom_file:P} $ZSH_CUSTOM/$zsh_custom_file
-  fi
-done
-
 # Install dependencies
 #
 echo

@@ -42,6 +42,13 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
 export GPG_TTY=`tty`
 
+alias ls="ls --color=auto -F"
+alias be='bundle exec'
+alias vim='nvim'
+alias vi='nvim'
+alias gg='git grep'
+alias vimvim="vi ~/.vimrc"
+
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
