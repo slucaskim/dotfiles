@@ -15,14 +15,6 @@ fi
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Pure Prompt: https://github.com/sindresorhus/pure#getting-started
-#autoload -U promptinit; promptinit
-#prompt pure
-
-# vim keybindings
-set -o vi
-bindkey "^R" history-incremental-search-backward
-
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
