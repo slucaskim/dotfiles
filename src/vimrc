@@ -32,6 +32,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Shopify/vim-sorbet'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 syntax on
@@ -78,6 +79,10 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeDirArrows = 1
 nnoremap <silent> <Leader>d :NERDTreeFind<CR>
 nnoremap <Leader>f :NERDTreeToggle<Enter>
+
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
 
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
