@@ -81,6 +81,7 @@ nnoremap <silent> <Leader>d :NERDTreeFind<CR>
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 
 " vim-test
+let test#strategy = "neovim"
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 
