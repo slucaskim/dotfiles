@@ -7,17 +7,16 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
 Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-liquid'
-Plug 'plasticboy/vim-markdown'
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-rails'
 Plug 'airblade/vim-gitgutter'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'godlygeek/tabular'
 Plug 'quentindecock/vim-cucumber-align-pipes'
 Plug 'kchmck/vim-coffee-script'
@@ -31,7 +30,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'Shopify/vim-sorbet'
 Plug 'vim-test/vim-test'
 call plug#end()
 
@@ -59,7 +57,7 @@ xnoremap . :normal . <Enter>
 
 " fzf
 " git ls-files ignore rbi extensions
-nmap <C-p> :GFiles -- ':!:*.rbi'<CR>
+nmap <C-p> :GFiles<CR>
 nmap <C-_> :Ag<CR>
 nmap <silent> <C-f> :Ag <C-R><C-W><CR>
 nmap <C-o> :History<CR>
@@ -88,12 +86,13 @@ nmap <silent> <leader>T :TestFile<CR>
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" vim-better-whitespace
-autocmd BufEnter * EnableStripWhitespaceOnSave
-let g:strip_whitespace_confirm=0
-
-" don't auto-fold
-let g:vim_markdown_folding_disabled = 1
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'javascript': ['prettier', 'eslint'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_disable_lsp = 1
+let g:ale_ruby_rubocop_auto_correct_all = 1
 
 " rubocop
 let g:vimrubocop_keymap = 0
