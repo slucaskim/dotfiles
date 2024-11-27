@@ -59,7 +59,7 @@ echo --- neovim configured
 echo
 
 # Silver Searcher
-install silversearcher-ag
+install the_silver_searcher
 
 # fzf
 install fzf
