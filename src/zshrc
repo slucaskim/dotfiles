@@ -4,11 +4,7 @@ export PATH=/opt/homebrew/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
-if [ "$SPIN" ]; then
-  ZSH_THEME="cloud"
-else
-  ZSH_THEME="eastwood"
-fi
+ZSH_THEME="fwalch"
 # HYPHEN_INSENSITIVE="true"
 # ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
@@ -49,6 +45,8 @@ alias vimvim="vi ~/.vimrc"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+# enable chruby
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
 [[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
