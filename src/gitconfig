@@ -21,7 +21,7 @@
 	insteadOf = ssh://git@github.com/Shopify/
 	insteadOf = ssh://git@github.com/shopify/
 [user]
-	name = Lucas Kim
+	name = slucaskim
 	email = slucaskim@gmail.com
 [pager]
 	branch = false

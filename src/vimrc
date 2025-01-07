@@ -34,7 +34,7 @@ Plug 'vim-test/vim-test'
 call plug#end()
 
 syntax on
-set synmaxcol=128
+set synmaxcol=200
 set number
 colorscheme badwolf
 set termguicolors
